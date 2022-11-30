@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Последние обновления на сайте</title>
+{% endblock  %}
+
+{% block content %}
+  {% include 'includes/posts/switcher.html' %}
+  {% for post in page_obj %}
+    {% include 'includes/posts/post_card.html' %}
+    {% if post.group %}
+      <p>
+        Группа:
+        <a href="{% url 'posts:group_list' post.group.slug %}">{{ post.group.title }}</a>
+      </p>
+    {% endif %}
+    {% if not forloop.last %}<hr>{% endif %}
+  {% endfor %} 
+  {% include 'includes/posts/paginator.html' %}  
+{% endblock content %}
