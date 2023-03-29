@@ -4,30 +4,46 @@
 {% endblock %}
 {% block content %}
 {% comment %} Колонки с отступом сверху и снизу {% endcomment %}
-<div class="row">
-  <h1>Вот что я умею</h1>
-  {% comment %}
-    Боковой блок со списком технологий 
+<div class="container">
+  <div class="row">
+    {% comment %}
+    Боковой блок со списком технологий
     Займет всю ширину блока на мобильном
     и 25% при размерах экрана ≥768px
-  {% endcomment %}
-  <aside class="col-12 col-md-3">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        Python
-      </li>
-      <li class="list-group-item">
-        Django
-      </li>
-    </ul>
-  </aside>
-  {% comment %}
-    Статья  
+    {% endcomment %}
+    <aside class="col-12 col-md-3">
+      <h3>Технологии и стек:</h3>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          Python
+        </li>
+        <li class="list-group-item">
+          Django
+        </li>
+        <li class="list-group-item">
+          HTML
+        </li>
+        <li class="list-group-item">
+          CSS
+        </li>
+        <li class="list-group-item">
+          Bootstrap
+        </li>
+      </ul>
+    </aside>
+    {% comment %}
+    Статья
     Займет всю ширину блока на мобильном
     и 75% при размерах экрана ≥768px
-  {% endcomment %}
-  <article class="col-12 col-md-9">
-    <p>Текст страницы "Технологии"</p>
-  </article>
+    {% endcomment %}
+    <article class="col-12 col-md-8">
+      <h1>Yatube</h1>
+      <p>Простенький блог.<br>
+        Регистрация, авторизация, публикация(CRU) постов, комментарии к постам, подписка на автора.</p>
+      <p>Основной язык - Python.<br>
+        Архитектура MVC.</p>
+      <p>Тестирование - Unittest.</p>
+    </article>
+  </div>
 </div>
 {% endblock %}

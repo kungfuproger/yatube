@@ -1,15 +1,20 @@
 
       {% with request.resolver_match.view_name as view_name %}
-      <ul class="nav nav-pills">
+      <ul class="nav nav-pills pe-5">
         <li class="nav-item"> 
           <a class="nav-link {% if view_name == 'about:author' %}active{% endif %}"  
-          href="{% url 'about:author' %}">Об авторе</a>
+          href="{% url 'about:author' %}">От автора</a>
         </li>
         <li class="nav-item">
           <a class="nav-link {% if view_name == 'about:tech' %}active{% endif %}" 
           href="{% url 'about:tech' %}">Технологии</a>
         </li>
+      </ul>
+      <ul class="nav nav-pills">
         {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link">/> {{ user.username }}</a>
+        </li>
         <li class="nav-item"> 
           <a class="nav-link {% if view_name == 'posts:post_create' %}active{% endif %}" 
           href="{% url 'posts:post_create' %}">Новая запись</a>
@@ -21,9 +26,6 @@
         <li class="nav-item"> 
           <a class="nav-link link-light {% if view_name == 'users:logout' %}active{% endif %}" 
           href="{% url 'users:logout' %}">Выйти</a>
-        </li>
-        <li>
-          Пользователь: {{ user.username }}
         </li>
         {% else %}
         <li class="nav-item"> 
