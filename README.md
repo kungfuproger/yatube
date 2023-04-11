@@ -9,5 +9,4 @@
 Основной язык - Python.
 Архитектура MVC.
 Django, HTML, CSS, Bootstrap.
-
 Тестирование - Unittest.
